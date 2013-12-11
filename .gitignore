@@ -1,6 +1,7 @@
 *.class
 
 dummy
+releases/dummy
 
 # Package Files #
 *.jar
