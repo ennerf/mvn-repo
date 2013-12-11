@@ -1,6 +1,6 @@
 h1. What is this ?
 
-This is an unofficial repo for open source projects that can't currently be found in managed maven repositories.
+This is an unofficial repo for some open source projects that can't currently be found in managed maven repositories. I'm not affiliated with the hosted projects and thus can't upload them directly to maven central.
 
 h2. Why ?
 
@@ -10,7 +10,7 @@ Feel free to use my repo, but understand that I'm not affiliated with any of the
 
 If you think some artifact should be updated, please let me know or push the change in yourself.
 
-Artifacts in this repo have an -unofficial postfix in order to avoid naming collisions in the future. The sources corresponding to these artifacts can be found here https://github.com/ennerf/mvn-project .
+Artifacts in this repo have an -unofficial postfix in order to avoid naming collisions in the future. The sources corresponding to these artifacts can be found here https://github.com/ennerf/mvn-projects.
 
 h2. Adding the repository
 
@@ -23,7 +23,7 @@ bc. <repositories>
     </repository>
 </repositories>
 
-h2. Available projects
+h2. Currently Available Artifacts
 
 h3. LCM - Lightweight Communications and Marshalling
 
@@ -38,19 +38,25 @@ bc. <dependency>
 
 h2. Deploying Artifacts
 
-# Clone the project for the sources corresponding to this repository
+* Clone the project for the sources corresponding to this repository
 
 bc. git clone https://github.com/ennerf/mvn-project.git
 
-# Add your projects or update source code of existing ones
+* Add your projects or update source code of existing ones
 
-# Deploy artifacts into a local folder via @mvn-project/deploy_local.sh@ or @mvn-project\deploy_local.bat@
+* Deploy artifacts into a local folder via @mvn-project/deploy_local.sh@ or @mvn-project\deploy_local.bat@
 
-# Clone mvn-repo
+* Clone mvn-repo
 
 bc. git clone https://github.com/ennerf/mvn-repo.git
 
-# Copy and paste mvn-project/mvn-repo/* into mvn-repo/
+* Copy and paste mvn-project/mvn-repo/* into mvn-repo/
 
-# Push changes
+* Push changes
+
+
+h2. Greetings
+
+Thanks to "Cemerick":http://cemerick.com/2010/08/24/hosting-maven-repos-on-github/ for some inspiration.
+
 
