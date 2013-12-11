@@ -31,7 +31,9 @@ h2. Currently Available Artifacts
 
 h3. LCM - Lightweight Communications and Marshalling
 
-"LCM":http://lcm.googlecode.com is a PubSub messaging framework that I've found very useful in several projects, especially with regards to robotics.
+LCM is a PubSub messaging framework that I've found very useful in several projects, especially with regards to robotics.
+
+Website: http://lcm.googlecode.com
 
 bc. <dependency>
 	<groupId>com.googlecode.lcm</groupId>
