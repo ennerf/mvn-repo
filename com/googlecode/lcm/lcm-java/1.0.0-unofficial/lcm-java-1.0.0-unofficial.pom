@@ -1,0 +1,137 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- =========================================================== -->
+    <!-- Project Settings                                            -->
+    <!-- =========================================================== -->
+    <groupId>com.googlecode.lcm</groupId>
+    <artifactId>lcm-java</artifactId>
+    <version>1.0.0-unofficial</version>
+
+    <name>LCM - Lightweight Communications and Marshalling</name>
+    <url>https://lcm.googlecode.com/</url>
+
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+        <github.global.server>github</github.global.server>
+        <local.repository>${project.build.directory}/mvn-repo</local.repository>
+        <github.owner>ennerf</github.owner>
+        <github.projectName>mvn-repo</github.projectName>
+    </properties>
+
+
+    <!-- =========================================================== -->
+    <!-- Link to official Source Code                                -->
+    <!-- =========================================================== -->
+    <scm>
+        <connection>scm:svn:http://lcm.googlecode.com/svn/trunk/lcm-java/</connection>
+        <tag>r722</tag>
+        <url>https://code.google.com/p/lcm/source/</url>
+    </scm>
+
+
+    <!-- =========================================================== -->
+    <!-- Artifact Distribution Management                            -->
+    <!-- =========================================================== -->
+    <distributionManagement>
+
+        <!-- Artifact Download -->
+        <downloadUrl>https://raw.github.com/ennerf/mvn-repo/</downloadUrl>
+
+        <!-- Local Repository (These files get commited to git later on) -->
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${local.repository}</url>
+        </repository>
+
+    </distributionManagement>
+
+
+    <build>
+
+        <!-- =========================================================== -->
+        <!-- Build Extensions - needed by MVN to connect to SCM          -->
+        <!-- =========================================================== -->
+        <extensions>
+            <extension> <!-- SSH / SCP -->
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.4</version>
+            </extension>
+            <extension> <!-- SVN / CVS -->
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-scm</artifactId>
+                <version>2.4</version>
+            </extension>
+        </extensions>
+
+        <!-- =========================================================== -->
+        <!-- Build Plugins                                               -->
+        <!-- =========================================================== -->
+        <plugins>
+            <plugin> <!-- attaches source code to deployment -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin> <!-- attaches javadoc to deployment -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin> <!-- publishes local mvn-repo to github -->
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.9</version>
+                <configuration>
+                    <message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+                    <noJekyll>true</noJekyll> <!-- disable webpage processing -->
+                    <!--<outputDirectory>${local.repository}</outputDirectory>
+                    <branch>refs/heads/master</branch>
+                    <includes><include>**/*</include></includes>
+                    <repositoryName>${github.projectName}</repositoryName>
+                    <repositoryOwner>${github.owner}</repositoryOwner>         -->
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                    <branch>refs/heads/master</branch>
+                    <includes><include>**/*</include></includes>
+                    <repositoryName>mvn-repo</repositoryName>
+                    <repositoryOwner>ennerf</repositoryOwner>
+                </configuration>
+                <executions>
+                    <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+
+
+</project>
