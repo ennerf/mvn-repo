@@ -6,25 +6,51 @@ h2. Why ?
 
 Every once in a while I require a dependency that can't be found in maven central. Because using non-mavenized dependencies can get very messy, I've ended up deploying dependencies into my own  private repository until the various projects support maven. I'm in the process of making some of this publicly available so that others might save some time.
 
-Feel free to use my repo, but understand that I'm not affiliated with any of the projects and that artifects might not always be up to date. I'll update to new versions as needed. If you think some artifact should be updated, please let me know or push the change in yourself.
+Feel free to use my repo, but understand that I'm not affiliated with any of the projects and that artifacts might not be kept up to date. I'll update to new versions as needed. 
 
-Artifacts in this repo have an -unofficial postfix in order to avoid naming collisions in the future.
+If you think some artifact should be updated, please let me know or push the change in yourself.
 
-h2. How to use it ?
+Artifacts in this repo have an -unofficial postfix in order to avoid naming collisions in the future. The sources corresponding to these artifacts can be found here https://github.com/ennerf/mvn-project .
 
-Add the repository to your @pom.xml@ file:
+h2. Adding the repository
+
+You can add this repository by adding the following into your @pom.xml@ file:
 
 bc. <repositories>
     <repository>
         <id>github.ennerf</id>
-        <url>https://raw.github.com/ennerf/mvn-repo/master/</url>
+        <url>https://raw.github.com/ennerf/mvn-repo/master/releases</url>
     </repository>
 </repositories>
 
-Add dependencies, e.g.,
+h2. Available projects
 
-bc. <dependency>  <!-- LCM - Lightweight Communications and Marshalling -->
+h3. LCM - Lightweight Communications and Marshalling
+
+LCM is a PubSub messaging framework that I've found very useful in several projects, especially with regards to robotics. Check out http://lcm.googlecode.com for more information.
+
+bc. <dependency>
 	<groupId>com.googlecode.lcm</groupId>
 	<artifactId>lcm-java</artifactId>
 	<version>1.0.0-unofficial</version>
 </dependency>
+
+
+h2. Deploying Artifacts
+
+# Clone the project for the sources corresponding to this repository
+
+bc. git clone https://github.com/ennerf/mvn-project.git
+
+# Add your projects or update source code of existing ones
+
+# Deploy artifacts into a local folder via @mvn-project/deploy_local.sh@ or @mvn-project\deploy_local.bat@
+
+# Clone mvn-repo
+
+bc. git clone https://github.com/ennerf/mvn-repo.git
+
+# Copy and paste mvn-project/mvn-repo/* into mvn-repo/
+
+# Push changes
+
