@@ -43,7 +43,7 @@ bc. <dependency>
 
 h3. AprilTags - Visual Fiducial System 
 
-AprilTags is a library that allows object tracking using fiducials and a mono camera. The artifact corresponds to the basic Java support version on http://april.eecs.umich.edu/wiki/index.php/Download_and_Installation. (This means that native calls won't work)
+AprilTags is a library that allows object tracking using fiducials and a mono camera. The artifact corresponds to the minimal Java-only version on http://april.eecs.umich.edu/wiki/index.php/Download_and_Installation. This means that the JNI parts won't work!
 
 Website: http://april.eecs.umich.edu/wiki/
 
