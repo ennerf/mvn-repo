@@ -31,7 +31,7 @@ h2. Currently Available Artifacts
 
 h3. LCM - Lightweight Communications and Marshalling
 
-LCM is a PubSub messaging framework that I've found very useful in several projects, especially with regards to robotics.
+LCM is a PubSub messaging framework that I've found very useful in several robotics projects.
 
 Website: http://lcm.googlecode.com
 
@@ -39,4 +39,16 @@ bc. <dependency>
 	<groupId>com.googlecode.lcm</groupId>
 	<artifactId>lcm-java</artifactId>
 	<version>1.0.0-unofficial</version>
+</dependency>
+
+h3. AprilTags - Visual Fiducial System 
+
+AprilTags is a library that allows object tracking using fiducials and a mono camera. The artifact corresponds to the basic Java support version on http://april.eecs.umich.edu/wiki/index.php/Download_and_Installation. (This means that native calls won't work)
+
+Website: http://april.eecs.umich.edu/wiki/
+
+bc. <dependency>
+	<groupId>edu.umich.eecs.april</groupId>
+	<artifactId>april-minimal</artifactId>
+	<version>0.91-unofficial</version>
 </dependency>
