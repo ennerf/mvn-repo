@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>edu.umich.eecs.april</groupId>
+  <artifactId>april-minimal</artifactId>
+  <versioning>
+    <release>0.91-unofficial</release>
+    <versions>
+      <version>0.91-unofficial</version>
+    </versions>
+    <lastUpdated>20131212003819</lastUpdated>
+  </versioning>
+</metadata>
