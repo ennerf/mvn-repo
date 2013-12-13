@@ -2,8 +2,3 @@
 
 dummy
 releases/dummy
-
-# Package Files #
-*.jar
-*.war
-*.ear
