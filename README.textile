@@ -52,3 +52,19 @@ bc. <dependency>
 	<artifactId>april-minimal</artifactId>
 	<version>0.91-unofficial</version>
 </dependency>
+
+h3. OpenCV - Java 
+
+OpenCV is a popular computer vision library written in C++ and released under a BSD license. I've copied the automatically generated java sources of the 2.4.7-linux version and uploaded the resulting jar.
+
+Note that the native libraries are not included. Check http://docs.opencv.org/doc/tutorials/introduction/table_of_content_introduction/table_of_content_introduction.html for installation instructions. Don't forget to compile using the "-DBUILD_opencv_java=ON" flag. 
+
+The windows download comes with pre-compiled binaries. You'll need all standard opencv_*247 libs as well as opencv_java247 in your library path. 
+
+Website: http://www.opencv.org
+
+bc. <dependency>
+	<groupId>org.opencv</groupId>
+	<artifactId>opencv-java</artifactId>
+	<version>2.4.7-unofficial</version>
+</dependency>
