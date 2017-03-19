@@ -38,7 +38,7 @@ Website: http://lcm.googlecode.com
 bc. <dependency>
 	<groupId>com.googlecode.lcm</groupId>
 	<artifactId>lcm-java</artifactId>
-	<version>1.0.0-unofficial</version>
+	<version>1.2.0-unofficial</version>
 </dependency>
 
 h3. AprilTags - Visual Fiducial System 
